@@ -1,6 +1,6 @@
 from paquetes.complemento1 import Complemento1
 
-class Ccomplemento2:
+class Complemento2:
     
     def __init__(self):
         pass
@@ -20,17 +20,18 @@ class Ccomplemento2:
     # con el resultado
     def __agregar_bit(self, binario):
         lista = list(binario)
-        res = {'suma':'','op':0}
+        suma = ''
+        sumando = 1
         for i in reversed(lista):
-            if res['op'] == -1:
+            if sumando == 1:
                 if i == '0':
-                    res['suma'] = '1' + res['suma']
-                    res['op'] = 1
+                    suma = '1' + suma
+                    sumando = 0
                 else:
-                    res['suma'] = '0' + res['suma']
+                    suma = '0' + suma
             else:
-                res['suma'] = i + res['suma']
-        return res['suma']
+                suma = i + suma
+        return suma
 
     # Retorna el resultado del algoritmo
     def get(self,numero):
