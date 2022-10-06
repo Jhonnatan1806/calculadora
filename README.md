@@ -8,11 +8,11 @@ from paquetes.binario import binario
 ## Decimal a Complemento 1
 metodo de importación:
 ```python
-from paquetes.complemento1 import complemento1
+from paquetes.complemento import complemento1
 ```
 ## Decimal a Complemento 2
 metodo de importación:
 ```python
-from paquetes.complemento2 import complemento2
+from paquetes.complemento import complemento2
 ```
 ## Decimal a Octal
