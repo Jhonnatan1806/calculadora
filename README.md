@@ -5,6 +5,6 @@ importar la clase para pasar de decimal a binario
 ```python
 from paquetes.binario import binario
 ```
-## Decimal a Complemnto 1
-## Decimal a Complemnto 2
+## Decimal a Complemento 1
+## Decimal a Complemento 2
 ## Decimal a Octal
