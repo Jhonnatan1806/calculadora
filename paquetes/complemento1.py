@@ -1,15 +1,15 @@
 from paquetes.binario import Binario
 
-class Complemento_1:
+class Complemento1:
     
-    def __init__(self, numero):
-        self.__numero = numero
+    def __init__(self):
+        pass
 
     # Algoritmo de base 10 a complemento 1
     def __algoritmo(self,numero):
         # P1 Pasamos el numero(+) a binario
         numero = abs(numero)
-        binario = Binario(numero).get()
+        binario = Binario().get(numero)
         # P2 empaquetamos el numero
         bits = self.__bits(numero) - len(binario)
         binario = '0'*bits + binario
@@ -39,5 +39,5 @@ class Complemento_1:
         return bin_invertido
 
     # Retorna el resultado del algoritmo
-    def get(self):
-        return self.__algoritmo(self.__numero)
+    def get(self,numero):
+        return self.__algoritmo(numero)

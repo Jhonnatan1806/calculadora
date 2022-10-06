@@ -1,6 +1,6 @@
-from paquetes.complemento1 import Complemento_1
+from paquetes.complemento1 import Complemento1
 
-class Ccomplemento_2:
+class Ccomplemento2:
     
     def __init__(self):
         pass
@@ -11,7 +11,7 @@ class Ccomplemento_2:
         # P2 Empaquetamos el numero
         # P3 Invertimos el numero
         # Para esto utilizamos la clase complemento1
-        binario = Complemento_1(numero).get()
+        binario = Complemento1().get(numero)
         # P4 Sumamos 1 bit
         binario = self.__agregar_bit(binario)
         return binario
@@ -33,6 +33,6 @@ class Ccomplemento_2:
         return res['suma']
 
     # Retorna el resultado del algoritmo
-    def get(self):
-        return self.__algoritmo(self.__numero)
+    def get(self,numero):
+        return self.__algoritmo(numero)
     
