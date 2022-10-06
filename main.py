@@ -1,5 +1,3 @@
-from paquetes.binario import binario
-
 def main():
     pass
 
