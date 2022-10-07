@@ -9,8 +9,10 @@ class Hexadecimal:
         while numero >= 1:
             a = int(numero) % 16
             numero = numero/16
+            # Utilizamos char para convertirlo el string en ASCII
             if a >= 10:
                 palabra = chr(a+55) + palabra
+            # Caso contrario solo tomamos el valor numerico
             else:
                 palabra = str(a) + palabra
         return palabra
