@@ -6,10 +6,10 @@ class Complemento1:
         pass
 
     # Algoritmo de base 10 a complemento 1
-    def __algoritmo(self,numero):
+    def dec_bin(self,numero):
         # P1 Pasamos el numero(+) a binario
         numero = abs(numero)
-        binario = Binario().get(numero)
+        binario = Binario().dec_bin(numero)
         # P2 empaquetamos el numero
         bits = self.__bits(numero) - len(binario)
         binario = '0'*bits + binario
@@ -39,7 +39,3 @@ class Complemento1:
             else:
                 bin_invertido += '0'
         return bin_invertido
-
-    # Retorna el resultado del algoritmo
-    def get(self,numero):
-        return self.__algoritmo(numero)

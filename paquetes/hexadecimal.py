@@ -4,7 +4,7 @@ class Hexadecimal:
         pass
     
     # Algoritmo de base 10 a base 16
-    def __algoritmo(self, numero):
+    def dec_hex(self, numero):
         palabra = '' 
         while numero >= 1:
             a = int(numero) % 16
@@ -16,7 +16,3 @@ class Hexadecimal:
             else:
                 palabra = str(a) + palabra
         return palabra
-    
-    # Retorna el resultado del algoritmo
-    def get(self,numero):
-        return self.__algoritmo(numero)
