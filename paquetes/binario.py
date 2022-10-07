@@ -1,5 +1,3 @@
-from paquetes.decimal import Decimal
-
 class Binario():
 
     def __init__(self):
@@ -7,8 +5,12 @@ class Binario():
     
     # Algoritmo de base 10 a base 2
     def __algoritmo(self,numero):
-        # Reutilizamos el algoritmo decimal pero con base=2
-        return Decimal().get(numero,2)
+        palabra = '' 
+        while numero >= 1:
+            a = int(numero) % 2
+            numero = numero/2
+            palabra = str(a) + palabra
+        return palabra
 
     # Retorna el resultado del algoritmo
     def get(self,numero):

@@ -1,5 +1,3 @@
-from paquetes.decimal import Decimal
-
 class Hexadecimal:
 
     def __init__(self):
@@ -7,8 +5,15 @@ class Hexadecimal:
     
     # Algoritmo de base 10 a base 16
     def __algoritmo(self, numero):
-        # Reutilizamos el algoritmo decimal pero con base=16
-        return Decimal().get(numero,16)
+        palabra = '' 
+        while numero >= 1:
+            a = int(numero) % 16
+            numero = numero/16
+            if a >= 10:
+                palabra = chr(a+55) + palabra
+            else:
+                palabra = str(a) + palabra
+        return palabra
     
     # Retorna el resultado del algoritmo
     def get(self,numero):
