@@ -16,7 +16,7 @@ class IEEE754x32:
         binario = b_fracionado.split(',')
         # P3 Identificar el Exponente y el tipo de numero
         # Se identifica si tiene parte entera o no
-        if int(binario[1]) > 0:
+        if int(binario[0]) > 0:
             # Se le suma exponentes + 126
             exp_dec = len(binario[0]) + 126
             exp_bin = Binario().get(exp_dec)
@@ -27,7 +27,7 @@ class IEEE754x32:
         # Se empaqueta en 8 bits
         exponente = '0'*(8-len(exp_bin)) + exp_bin
         # P4 Identificar la Mantisa
-        if int(binario[1]) > 0:
+        if int(binario[0]) > 0:
             pos = binario[0].index('1')
             mantisa = binario[0][pos+1:] + binario[1]
         else:

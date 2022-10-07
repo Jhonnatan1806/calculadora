@@ -13,7 +13,7 @@ class Fraccionario:
         # P2 pasamos la parte entera a binario
         b_entero = Binario().get(p_entera)
         # P3 pasamos la parte decimal a binario
-        b_decimal = self.__decimal(p_decimal,4)
+        b_decimal = self.__decimal(p_decimal,precision)
         return b_entero + ',' + b_decimal
     
     # Algoritmo para pasar un decimal base 10 a base 2
@@ -24,6 +24,8 @@ class Fraccionario:
             binario += str(int(numero))
             if numero >= 1:
                 numero -= 1
+            
+
         return binario
 
     # Retorna el resultado del algoritmo
