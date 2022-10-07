@@ -5,6 +5,7 @@ class Fraccionario:
     def __init__(self):
         pass
 
+    # Algoritmo de numero fraccionario de base 10 a base 2
     def __algoritmo(self,numero,precision):
         # P1 separamos la parte entera de la decimal
         p_entera = int(numero)
@@ -15,6 +16,7 @@ class Fraccionario:
         b_decimal = self.__decimal(p_decimal,4)
         return b_entero + ',' + b_decimal
     
+    # Algoritmo para pasar un decimal base 10 a base 2
     def __decimal(self, numero, precision):
         binario = ''
         for i in range(precision):
@@ -24,6 +26,7 @@ class Fraccionario:
                 numero -= 1
         return binario
 
+    # Retorna el resultado del algoritmo
     def get(self,numero,precision):
         return self.__algoritmo(numero,precision)
 
