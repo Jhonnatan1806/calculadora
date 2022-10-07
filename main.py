@@ -7,7 +7,7 @@ def main():
 # print(s.index('1')) #2
 # print(s.rindex('1')) #4
 
-ie = IEEE754x32().get(45)
+ie = IEEE754x32().get(41)
 print(ie)
 
 if __name__ == '__main__':
