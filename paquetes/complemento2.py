@@ -16,8 +16,7 @@ class Complemento2:
         binario = self.__agregar_bit(binario)
         return binario
     
-    # Funcion que suma un bit y retorna un string
-    # con el resultado
+    # Funcion que suma un bit al binario
     def __agregar_bit(self, binario):
         lista = list(binario)
         suma = ''
