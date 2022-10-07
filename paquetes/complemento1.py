@@ -17,6 +17,7 @@ class Complemento1:
         binario = self.__invertir(binario)
         return binario
 
+    # Funcion que retorna la cantidad de bits a usar
     def __bits(self, numero):
         # verificamos si el decimal sera 
         # empaquetado en 8,16,32,64 bits
@@ -29,6 +30,7 @@ class Complemento1:
         else:
             return 64
     
+    # Funcion que invierte le numero binario
     def __invertir(self, binario):
         bin_invertido = ''
         for i in range(len(binario)):
