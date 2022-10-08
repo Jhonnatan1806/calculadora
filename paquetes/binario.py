@@ -6,6 +6,7 @@ class Binario:
     # =======================================================
     # Algoritmo de base 10 a base 2
     # =======================================================
+
     def dec_bin(self, n_base10):
         # Verificamos que el numero sea positivo
         if n_base10 >= 0:
@@ -30,6 +31,8 @@ class Binario:
         # empaquetado en 8,16,32,64 bits
         if n_base10 < 127:
             return 8
+        elif n_base10 < 2048:
+            return 12
         elif n_base10 < 32768:
             return 16
         elif n_base10 < 2147483648:
@@ -40,6 +43,7 @@ class Binario:
     # =======================================================
     # Algoritmo de base 2 a base 10
     # =======================================================
+    
     def bin_dec(self, n_base2):
         # Iniciamos la variable que retorna el resultado
         n_base10 = 0 

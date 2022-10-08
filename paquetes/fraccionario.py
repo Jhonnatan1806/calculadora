@@ -4,24 +4,42 @@ class Fraccionario:
     
     def __init__(self):
         pass
+    
+    # =======================================================
+    # Algoritmo de base 10 a Punto Fijo
+    # =======================================================
 
-    # Algoritmo de numero fraccionario de base 10 a base 2
-    def dec_bin(self,numero,precision):
+    def dec_bin(self,n_base10,precision):
         # P1 separamos la parte entera de la decimal
-        p_entera = int(numero)
-        p_decimal = numero - p_entera
+        n_entero = int(n_base10)
+        n_frac = n_base10 - n_entero
         # P2 pasamos la parte entera a binario
-        b_entero = Binario().dec_bin(p_entera)
+        b_entero = Binario().dec_bin(n_entero)
         # P3 pasamos la parte decimal a binario
-        b_decimal = self.__decimal(p_decimal,precision)
-        return b_entero + ',' + b_decimal
+        b_frac = self.__dec_bin_frac(n_frac,precision)
+        return b_entero + ',' + b_frac
     
     # Algoritmo para pasar un decimal base 10 a base 2
-    def __decimal(self, numero, precision):
-        binario = ''
+    def __dec_bin_frac(self, n_base10, precision):
+        n_base2 = ''
         for i in range(precision):
-            numero *= 2
-            binario += str(int(numero))
-            if numero >= 1:
-                numero -= 1
-        return binario
+            n_base10 *= 2
+            n_base2 += str(int(n_base10))
+            if n_base10 >= 1:
+                n_base10 -= 1
+        return n_base2
+
+    # =======================================================
+    # Algoritmo de Punto Fijo a base 10
+    # =======================================================
+    def bin_dec(self,n_base2):
+        numero = n_base2.split(',')
+        n_entero = Binario().bin_dec(numero[0])
+        n_frac = self.__bin_dec_frac(numero[1])
+        return n_entero + n_frac
+
+    def __bin_dec_frac(self,n_base2):
+        n_base10 = 0 
+        for i in range(len(n_base2)):
+            n_base10 += float(n_base2[i])/pow(2,i+1)
+        return n_base10
