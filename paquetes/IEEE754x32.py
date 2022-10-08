@@ -6,6 +6,10 @@ class IEEE754x32:
     def __init__(self):
         pass
 
+    # =======================================================
+    # Algoritmo de base 10 a base 2
+    # =======================================================
+    
     def dec_bin(self,numero):
         # P1 Identificar el Signo
         # 0 = positivo & 1 = negativo
@@ -18,11 +22,12 @@ class IEEE754x32:
         # Se identifica si tiene parte entera o no
         if int(binario[0]) > 0:
             # Se le suma exponentes + 126
-            exp_dec = len(binario[0]) + 126
+            palabra = str(int(binario[0]))
+            exp_dec = len(palabra) + 126
             exp_bin = Binario().dec_bin(exp_dec)
         else:
             # Se le resta 128 - exponentes [VERIFICAR]
-            exp_dec = binario[1].index('1') + 1
+            exp_dec = binario[1].index('1') + 2
             exp_bin = Binario().dec_bin(128 - exp_dec)
         # Se empaqueta en 8 bits
         exponente = '0'*(8-len(exp_bin)) + exp_bin
