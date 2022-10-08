@@ -1,7 +1,7 @@
 from paquetes.fraccionario import Fraccionario
 import unittest
 
-class Test_Complemento2(unittest.TestCase):
+class Test_Fraccionario(unittest.TestCase):
 
     def setUp(self):
         self.tmp = Fraccionario()

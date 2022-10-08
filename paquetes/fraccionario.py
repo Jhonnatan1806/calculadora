@@ -32,12 +32,14 @@ class Fraccionario:
     # =======================================================
     # Algoritmo de Punto Fijo a base 10
     # =======================================================
+
     def bin_dec(self,n_base2):
         numero = n_base2.split(',')
         n_entero = Binario().bin_dec(numero[0])
         n_frac = self.__bin_dec_frac(numero[1])
         return n_entero + n_frac
 
+    # Algoritmo para pasar un decimal base 2 a base 10
     def __bin_dec_frac(self,n_base2):
         n_base10 = 0 
         for i in range(len(n_base2)):
