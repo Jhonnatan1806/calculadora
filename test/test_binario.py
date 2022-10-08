@@ -9,8 +9,11 @@ class Test_Binario(unittest.TestCase):
     def tearDown(self):
         del self.tmp
 
-    def test_dec_bin_positivo(self):
+    def test_dec_bin(self):
         self.assertEquals('00010010', self.tmp.dec_bin(18))
+    
+    def test_bin_dec(self):
+        self.assertEquals(18, self.tmp.bin_dec('00010010'))
 
 if __name__ == '__main__':
     unittest.main()
