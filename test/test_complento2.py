@@ -4,10 +4,13 @@ import unittest
 class Test_Complemento2(unittest.TestCase):
 
     def setUp(self):
-        pass
+        self.tmp = Complemento2()
     
     def tearDown(self):
-        pass
+        del self.tmp
+    
+    def test_bin_dec(self):
+        self.assertEquals(-19, self.tmp.bin_dec('11101101'))
 
 if __name__ == '__main__':
     unittest.main()

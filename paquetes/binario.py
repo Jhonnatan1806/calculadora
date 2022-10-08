@@ -8,9 +8,7 @@ class Binario:
     # =======================================================
     def dec_bin(self, n_base10):
         # Verificamos que el numero sea positivo
-        if n_base10 <= 0:
-            n_base2 = '00000000'
-        else:
+        if n_base10 >= 0:
             # Incializamos las variables
             n_base2 = '' 
             # Ingresamos al algoritmo
@@ -21,6 +19,9 @@ class Binario:
             # Empaquetamos el numero
             bits = self.__bits(n_base10) - len(n_base2)
             n_base2 = '0'*bits + n_base2 
+        else:
+            # Error numero negativo
+            n_base2 = '-1'
         return n_base2
 
     # Funcion que retorna la cantidad de bits a usar
