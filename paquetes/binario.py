@@ -7,17 +7,20 @@ class Binario:
     # Algoritmo de base 10 a base 2
     # =======================================================
     def dec_bin(self, n_base10):
-        # P1 Pasamos el numero a binario
-        n_base2 = '' 
-        n_base10 = abs(n_base10)
-        # Ingresamos al algoritmo
-        while n_base10 >= 1:
-            a = int(n_base10) % 2
-            n_base10 = n_base10/2
-            n_base2 = str(a) + n_base2
-        # P2 Empaquetamos el numero
-        bits = self.__bits(n_base10) - len(n_base2)
-        n_base2 = '0'*bits + n_base2
+        # Verificamos que el numero sea positivo
+        if n_base10 <= 0:
+            n_base2 = '00000000'
+        else:
+            # Incializamos las variables
+            n_base2 = '' 
+            # Ingresamos al algoritmo
+            while n_base10 >= 1:
+                a = int(n_base10) % 2
+                n_base10 = n_base10/2
+                n_base2 = str(a) + n_base2
+            # Empaquetamos el numero
+            bits = self.__bits(n_base10) - len(n_base2)
+            n_base2 = '0'*bits + n_base2 
         return n_base2
 
     # Funcion que retorna la cantidad de bits a usar
@@ -39,6 +42,7 @@ class Binario:
     def bin_dec(self, n_base2):
         # Iniciamos la variable que retorna el resultado
         n_base10 = 0 
+        # Ingresamos al algoritmo
         # Usamos a_{n} = b_{n} + 2*a_{n-1}
         for i in range(len(n_base2)) :
             n_base10 = int(n_base2[i]) + 2*n_base10
