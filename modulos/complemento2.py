@@ -1,5 +1,5 @@
-from paquetes.binario import Binario
-from paquetes.complemento1 import Complemento1
+from modulos.binario import Binario
+from modulos.complemento1 import Complemento1
 
 class Complemento2:
     

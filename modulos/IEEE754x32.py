@@ -1,5 +1,5 @@
-from paquetes.binario import Binario
-from paquetes.fraccionario import Fraccionario
+from modulos.binario import Binario
+from modulos.fraccionario import Fraccionario
 
 class IEEE754x32:
 

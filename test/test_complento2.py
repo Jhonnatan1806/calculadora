@@ -1,4 +1,4 @@
-from paquetes.complemento2 import Complemento2
+from modulos.complemento2 import Complemento2
 import unittest
 
 class Test_Complemento2(unittest.TestCase):

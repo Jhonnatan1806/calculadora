@@ -1,4 +1,4 @@
-from paquetes.binario import Binario
+from modulos.binario import Binario
 
 class Fraccionario:
     

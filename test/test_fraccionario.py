@@ -1,4 +1,4 @@
-from paquetes.fraccionario import Fraccionario
+from modulos.fraccionario import Fraccionario
 import unittest
 
 class Test_Fraccionario(unittest.TestCase):

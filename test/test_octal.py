@@ -1,4 +1,4 @@
-from paquetes.octal import Octal
+from modulos.octal import Octal
 import unittest
 
 class Test_Octal(unittest.TestCase):

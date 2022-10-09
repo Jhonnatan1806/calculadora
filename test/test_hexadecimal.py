@@ -1,4 +1,4 @@
-from paquetes.hexadecimal import Hexadecimal
+from modulos.hexadecimal import Hexadecimal
 import unittest
 
 class Test_Hexadecimal(unittest.TestCase):

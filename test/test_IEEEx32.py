@@ -1,4 +1,4 @@
-from paquetes.IEEE754x32 import IEEE754x32
+from modulos.IEEE754x32 import IEEE754x32
 import unittest
 
 class Test_IEEE754x32(unittest.TestCase):
