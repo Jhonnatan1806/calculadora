@@ -46,5 +46,5 @@ class Complemento2:
         # P2 Obtenemos el tamaño de la palabra 8,16,32...
         lng = len(n_base2)
         # P3 Aplicamos C - 2^n = - x 
-        n_base10 = complemento - pow(2,lng) 
+        n_base10 = complemento - pow(2,lng)
         return n_base10

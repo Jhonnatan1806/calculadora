@@ -37,4 +37,4 @@ class Complemento1:
     def bin_dec(self, n_base2):
         n_base2 = self.__invertir(n_base2)
         n_base10 = Binario().bin_dec(n_base2)
-        return n_base10
+        return n_base10*(-1)
