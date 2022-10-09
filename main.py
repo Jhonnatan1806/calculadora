@@ -156,8 +156,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         else:
             palabra = ''
         return palabra
-        
-
+         
 def main():    
     app = QtWidgets.QApplication([])
     window = MainWindow()
