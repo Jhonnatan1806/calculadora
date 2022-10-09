@@ -123,7 +123,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         elif opcion == 2:
             palabra = str(Complemento2().bin_dec(palabra))
         elif opcion == 3:
-            palabra = ''
+            palabra = str(IEEE754x32().bin_dec(palabra))
         elif opcion == 4:
             palabra = str(Fraccionario().bin_dec(palabra))
         elif opcion == 5:

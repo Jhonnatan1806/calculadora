@@ -44,4 +44,4 @@ class Fraccionario:
         n_base10 = 0 
         for i in range(len(n_base2)):
             n_base10 += float(n_base2[i])/pow(2,i+1)
-        return n_base10
+        return round(n_base10,4)

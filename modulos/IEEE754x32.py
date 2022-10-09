@@ -48,3 +48,34 @@ class IEEE754x32:
     # =======================================================
     # Algoritmo de base 2 a base 10
     # =======================================================
+
+    def bin_dec(self,palabra):
+        if len(palabra)<32:
+            fix = 32-len(palabra)
+            palabra = palabra + '0'*fix
+        # P1. Separar las partes 
+        b_signo = palabra[0]
+        b_exponente = palabra[1:9]
+        b_mantisa = palabra[9:]
+        # P2. Identificar el Signo
+        signo = 1 if b_signo == '0' else -1
+        # P3. Identificar el Exponente y el tipo de numero (Infinito, Fraccionario naturalizado o desnaturalizado, cero)
+        exponente = Binario().bin_dec(b_exponente) - 127
+        # Identificar la Mantisa y convertir el numero en Binario Fraccionario de punto fijo
+        if exponente == 128:
+            return 'infinito' if signo == 1 else '-infinito'
+        elif exponente == -127:
+            return 0
+        else:
+            # Es normalizada 
+            if exponente < 0:
+                b_frac = '0.' + '0'*exponente + '1' + b_mantisa
+            elif exponente >=1 or exponente <=23:
+                b_frac = '1' + b_mantisa[:exponente] + '.' + b_mantisa[exponente:]
+            else:
+                faltante = exponente - 23
+                b_frac = '1' + b_mantisa + '0'*faltante + '0.0'
+            # Convertir el Binario Fraccionario de punto fijo a Decimal
+            n_base10 = Fraccionario().bin_dec(b_frac)
+        return round(n_base10*signo,4)
+        
