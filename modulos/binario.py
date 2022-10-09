@@ -49,6 +49,9 @@ class Binario:
         n_base10 = 0 
         # Ingresamos al algoritmo
         # Usamos a_{n} = b_{n} + 2*a_{n-1}
-        for i in range(len(n_base2)) :
-            n_base10 = int(n_base2[i]) + 2*n_base10
+        if len(n_base2) > 1:
+            for i in range(len(n_base2)) :
+                n_base10 = int(n_base2[i]) + 2*n_base10
+        else:
+            n_base10 = int(n_base2,10)
         return n_base10 

@@ -17,7 +17,7 @@ class IEEE754x32:
         # P2 Convertir en Numero en binario Fraccionario
         # binario[0] = parte entera binario[1] = parte fraccionaria
         b_fracionado = Fraccionario().dec_bin(abs(numero),23)
-        binario = b_fracionado.split(',')
+        binario = b_fracionado.split('.')
         # P3 Identificar el Exponente y el tipo de numero
         # Se identifica si tiene parte entera o no
         if int(binario[0]) > 0:

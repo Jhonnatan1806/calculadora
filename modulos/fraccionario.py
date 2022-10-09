@@ -17,7 +17,7 @@ class Fraccionario:
         b_entero = Binario().dec_bin(n_entero)
         # P3 pasamos la parte decimal a binario
         b_frac = self.__dec_bin_frac(n_frac,precision)
-        return b_entero + ',' + b_frac
+        return b_entero + '.' + b_frac
     
     # Algoritmo para pasar un decimal base 10 a base 2
     def __dec_bin_frac(self, n_base10, precision):
@@ -34,7 +34,7 @@ class Fraccionario:
     # =======================================================
 
     def bin_dec(self,n_base2):
-        numero = n_base2.split(',')
+        numero = n_base2.split('.')
         n_entero = Binario().bin_dec(numero[0])
         n_frac = self.__bin_dec_frac(numero[1])
         return n_entero + n_frac

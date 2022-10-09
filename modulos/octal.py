@@ -23,6 +23,6 @@ class Octal:
         n_base10 = 0 
         k = len(n_base8)
         for i in range(k):
-            n_base10 += float(n_base8[i])*pow(8,k-1)
+            n_base10 += int(n_base8[i])*pow(8,k-1)
             k -=1 
         return n_base10
