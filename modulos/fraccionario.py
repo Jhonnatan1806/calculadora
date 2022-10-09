@@ -34,10 +34,14 @@ class Fraccionario:
     # =======================================================
 
     def bin_dec(self,n_base2):
-        numero = n_base2.split('.')
-        n_entero = Binario().bin_dec(numero[0])
-        n_frac = self.__bin_dec_frac(numero[1])
-        return n_entero + n_frac
+        if n_base2.find('.')!=-1:
+            numero = n_base2.split('.')
+            n_entero = Binario().bin_dec(numero[0])
+            n_frac = self.__bin_dec_frac(numero[1])
+            return n_entero + n_frac
+        else:
+            n_entero = Binario().bin_dec(n_base2)
+            return n_entero
 
     # Algoritmo para pasar un decimal base 2 a base 10
     def __bin_dec_frac(self,n_base2):
