@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,11 +14,15 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Calculadora Python</string>
   </property>
   <property name="styleSheet">
    <string notr="true">QPlainTextEdit {
 	border: 1px solid lightgrey;
+}
+
+QPlainTextEdit#text_res {
+	background-color:whitesmoke;
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -47,11 +54,11 @@
      <string>CONVERTIR</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox">
+   <widget class="QComboBox" name="combo_box">
     <property name="geometry">
      <rect>
       <x>25</x>
-      <y>130</y>
+      <y>110</y>
       <width>300</width>
       <height>40</height>
      </rect>
@@ -96,6 +103,11 @@
     </item>
     <item>
      <property name="text">
+      <string>Binario Fraccionario a Decimal</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
       <string>Binario a Octal</string>
      </property>
     </item>
@@ -122,6 +134,11 @@
     <item>
      <property name="text">
       <string>Decimal a Binario IEEE754 (32 bits) </string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Decimal a Binario Fraccionario</string>
      </property>
     </item>
     <item>
@@ -159,7 +176,7 @@
     <property name="geometry">
      <rect>
       <x>25</x>
-      <y>190</y>
+      <y>170</y>
       <width>300</width>
       <height>25</height>
      </rect>
@@ -167,18 +184,18 @@
     <property name="font">
      <font>
       <family>Montserrat Medium</family>
-      <pointsize>12</pointsize>
+      <pointsize>11</pointsize>
      </font>
     </property>
     <property name="text">
      <string>Ingresa el numero</string>
     </property>
    </widget>
-   <widget class="QPlainTextEdit" name="textEdit">
+   <widget class="QPlainTextEdit" name="text_edit">
     <property name="geometry">
      <rect>
       <x>25</x>
-      <y>230</y>
+      <y>200</y>
       <width>300</width>
       <height>40</height>
      </rect>
@@ -199,33 +216,11 @@
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="res32">
-    <property name="geometry">
-     <rect>
-      <x>25</x>
-      <y>280</y>
-      <width>300</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Montserrat</family>
-      <pointsize>11</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
    <widget class="QLabel" name="txt1">
     <property name="geometry">
      <rect>
       <x>25</x>
-      <y>90</y>
+      <y>80</y>
       <width>300</width>
       <height>25</height>
      </rect>
@@ -233,7 +228,7 @@
     <property name="font">
      <font>
       <family>Montserrat Medium</family>
-      <pointsize>12</pointsize>
+      <pointsize>11</pointsize>
      </font>
     </property>
     <property name="text">
@@ -264,39 +259,81 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="res64">
+   <widget class="QLabel" name="txt3">
     <property name="geometry">
      <rect>
       <x>25</x>
-      <y>310</y>
+      <y>260</y>
       <width>300</width>
-      <height>30</height>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Montserrat Medium</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Resultado</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="text_res">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>25</x>
+      <y>290</y>
+      <width>250</width>
+      <height>40</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Montserrat</family>
-      <pointsize>11</pointsize>
+      <pointsize>10</pointsize>
      </font>
     </property>
-    <property name="text">
+    <property name="cursor" stdset="0">
+     <cursorShape>IBeamCursor</cursorShape>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="plainText">
      <string/>
     </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
+    <property name="overwriteMode">
+     <bool>false</bool>
     </property>
-    <property name="indent">
-     <number>1</number>
+    <property name="placeholderText">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="copiar">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>290</y>
+      <width>40</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>C</string>
     </property>
    </widget>
    <zorder>boton</zorder>
-   <zorder>comboBox</zorder>
-   <zorder>textEdit</zorder>
-   <zorder>res32</zorder>
+   <zorder>combo_box</zorder>
+   <zorder>text_edit</zorder>
    <zorder>txt1</zorder>
    <zorder>titulo</zorder>
    <zorder>txt2</zorder>
-   <zorder>res64</zorder>
+   <zorder>txt3</zorder>
+   <zorder>text_res</zorder>
+   <zorder>copiar</zorder>
   </widget>
  </widget>
  <resources/>
