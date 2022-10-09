@@ -13,10 +13,10 @@ class Test_Complemento1(unittest.TestCase):
         self.assertEquals('11101101', self.tmp.dec_bin(-18))
     
     def test_dec_bin_error(self):
-        self.assertEquals('-1', self.tmp.dec_bin(18))
+        self.assertEquals('11101101', self.tmp.dec_bin(18))
     
     def test_bin_dec(self):
-        self.assertEquals(18, self.tmp.bin_dec('11101101'))
+        self.assertEquals(-18, self.tmp.bin_dec('11101101'))
 
 if __name__ == '__main__':
     unittest.main()

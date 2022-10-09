@@ -16,7 +16,7 @@ class Test_IEEE754x32(unittest.TestCase):
         self.assertEquals('01000001001010000000000000000000', self.tmp.dec_bin(10.5))
     
     def test_dec_bin_frac(self):
-        self.assertEquals('00111110100000000000000000000000', self.tmp.dec_bin(0.25))
+        self.assertEquals('00111110100000000000000000000000', self.tmp.dec_bin(0.25))   
 
 if __name__ == '__main__':
     unittest.main()

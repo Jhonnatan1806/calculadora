@@ -10,14 +10,10 @@ class Complemento1:
     # =======================================================
     
     def dec_bin(self, n_base10):
-        if n_base10 <= 0:
-            # P1 Pasamos el numero a binario
-            n_base2 = Binario().dec_bin(abs(n_base10))
-            # P3 Invertimos el numero
-            n_base2 = self.__invertir(n_base2)
-        else:
-            # Error numero positivo
-            n_base2 = '-1'
+        # P1 Pasamos el numero a binario
+        n_base2 = Binario().dec_bin(abs(n_base10))
+        # P3 Invertimos el numero
+        n_base2 = self.__invertir(n_base2)
         return n_base2
 
     # Funcion que invierte le numero binario
