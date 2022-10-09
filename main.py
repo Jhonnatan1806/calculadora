@@ -24,9 +24,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __copiar(self):
         msg = QMessageBox()
         if self.text_res.toPlainText()!='':
-            command = 'echo ' + self.text_res.toPlainText() + '| clip'
+            command = 'echo|set /p=' + self.text_res.toPlainText() + '| clip'
             os.system(command)
-            # mensaje de confirmacion
             msg.setIcon(QMessageBox.Information)
             msg.setWindowTitle("Exito")
             msg.setText("Copiado con exito")
@@ -46,7 +45,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             es_valido =  self.__validar('bin_frac',self.text_edit.toPlainText())
         elif index >= 5 and index < 7:
             es_valido =  self.__validar('bin',self.text_edit.toPlainText())
-        elif index >= 7 and index < 14:
+        elif index >= 7 and index < 10:
+            es_valido =  self.__validar('dec',self.text_edit.toPlainText())
+        elif index >= 10 and index < 12:
+            es_valido =  self.__validar('dec_frac',self.text_edit.toPlainText())
+        elif index >= 12 and index < 14:
             es_valido =  self.__validar('dec',self.text_edit.toPlainText())
         elif index >= 14 and index < 16:
             es_valido =  self.__validar('oct',self.text_edit.toPlainText())
@@ -82,8 +85,15 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                     return True
                 except ValueError:
                     return False
-        # Verificamos si es decimal
+        # Verificamos si es entero
         elif tipo == 'dec':
+            try:
+                int(palabra)
+                return True
+            except ValueError:
+                return False
+        # Verificamos si es fraccion
+        elif tipo == 'dec_frac':
             try:
                 float(palabra)
                 return True
