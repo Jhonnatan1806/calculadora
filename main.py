@@ -8,6 +8,7 @@ from modulos.octal import Octal
 from modulos.hexadecimal import Hexadecimal
 from modulos.IEEE754x32 import IEEE754x32
 
+from PyQt5.QtWidgets import QPlainTextEdit
 import os
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -18,6 +19,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.__init_cmp()
     
     def __init_cmp(self):
+        self.text_edit.setLineWrapMode(QPlainTextEdit.NoWrap)
+        self.text_res.setLineWrapMode(QPlainTextEdit.NoWrap)
         self.copiar.clicked.connect(self.__copiar)
         self.boton.clicked.connect(self.__accion)
 
