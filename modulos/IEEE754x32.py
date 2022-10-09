@@ -44,3 +44,9 @@ class IEEE754x32:
             mantisa = mantisa[:23]
         # P5 Unir las tres partes
         return signo + exponente + mantisa
+
+    # =======================================================
+    # Algoritmo de base 2 a base 10
+    # =======================================================
+
+    def dec_bin(self,numero):
