@@ -33,19 +33,19 @@ class Fraccionario:
     # Algoritmo de Punto Fijo a base 10
     # =======================================================
 
-    def bin_dec(self,n_base2):
+    def bin_dec(self,n_base2,precison):
         if n_base2.find('.')!=-1:
             numero = n_base2.split('.')
             n_entero = Binario().bin_dec(numero[0])
-            n_frac = self.__bin_dec_frac(numero[1])
+            n_frac = self.__bin_dec_frac(numero[1],precison)
             return n_entero + n_frac
         else:
             n_entero = Binario().bin_dec(n_base2)
             return n_entero
 
     # Algoritmo para pasar un decimal base 2 a base 10
-    def __bin_dec_frac(self,n_base2):
+    def __bin_dec_frac(self,n_base2,precison):
         n_base10 = 0 
         for i in range(len(n_base2)):
             n_base10 += float(n_base2[i])/pow(2,i+1)
-        return round(n_base10,4)
+        return round(n_base10,precison)

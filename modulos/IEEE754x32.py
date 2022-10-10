@@ -76,6 +76,6 @@ class IEEE754x32:
                 faltante = exponente - 23
                 b_frac = '1' + b_mantisa + '0'*faltante + '0.0'
             # Convertir el Binario Fraccionario de punto fijo a Decimal
-            n_base10 = Fraccionario().bin_dec(b_frac)
+            n_base10 = Fraccionario().bin_dec(b_frac,8)
         return round(n_base10*signo,4)
         

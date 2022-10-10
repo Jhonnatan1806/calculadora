@@ -7,6 +7,7 @@ from modulos.fraccionario import Fraccionario
 from modulos.octal import Octal
 from modulos.hexadecimal import Hexadecimal
 from modulos.IEEE754x32 import IEEE754x32
+from modulos.IEEE754x64 import IEEE754x64
 
 from PyQt5.QtWidgets import QPlainTextEdit
 import os
@@ -44,17 +45,17 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # Validamos si es un numero valido
         if index >= 0 and index < 3:
             es_valido =  self.__validar('bin',self.text_edit.toPlainText())
-        elif index >= 3 and index < 5:
+        elif index >= 3 and index < 6:
             es_valido =  self.__validar('bin_frac',self.text_edit.toPlainText())
-        elif index >= 5 and index < 7:
+        elif index >= 6 and index < 8:
             es_valido =  self.__validar('bin',self.text_edit.toPlainText())
-        elif index >= 7 and index < 10:
+        elif index >= 8 and index < 11:
             es_valido =  self.__validar('dec',self.text_edit.toPlainText())
-        elif index >= 10 and index < 12:
+        elif index >= 11 and index < 14:
             es_valido =  self.__validar('dec_frac',self.text_edit.toPlainText())
-        elif index >= 12 and index < 14:
-            es_valido =  self.__validar('dec',self.text_edit.toPlainText())
         elif index >= 14 and index < 16:
+            es_valido =  self.__validar('dec',self.text_edit.toPlainText())
+        elif index >= 16 and index < 18:
             es_valido =  self.__validar('oct',self.text_edit.toPlainText())
         else:
             es_valido =  self.__validar('hex',self.text_edit.toPlainText())
@@ -128,43 +129,48 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         elif opcion == 3:
             palabra = str(IEEE754x32().bin_dec(palabra))
         elif opcion == 4:
-            palabra = str(Fraccionario().bin_dec(palabra))
+            palabra = str(IEEE754x64().bin_dec(palabra))
         elif opcion == 5:
-            numero = Binario().bin_dec(palabra)
-            palabra = str(Octal().dec_oct(numero))
+            palabra = str(Fraccionario().bin_dec(palabra,4))
         elif opcion == 6:
             numero = Binario().bin_dec(palabra)
-            palabra = str(Hexadecimal().dec_hex(numero))
+            palabra = str(Octal().dec_oct(numero))
         elif opcion == 7:
-            numero = int(palabra)
-            palabra = str(Binario().dec_bin(numero))
+            numero = Binario().bin_dec(palabra)
+            palabra = str(Hexadecimal().dec_hex(numero))
         elif opcion == 8:
             numero = int(palabra)
-            palabra = str(Complemento1().dec_bin(numero))
+            palabra = str(Binario().dec_bin(numero))
         elif opcion == 9:
             numero = int(palabra)
-            palabra = str(Complemento2().dec_bin(numero))
+            palabra = str(Complemento1().dec_bin(numero))
         elif opcion == 10:
-            numero = float(palabra)
-            palabra = str(IEEE754x32().dec_bin(numero))
+            numero = int(palabra)
+            palabra = str(Complemento2().dec_bin(numero))
         elif opcion == 11:
             numero = float(palabra)
-            palabra = str(Fraccionario().dec_bin(numero,8))
+            palabra = str(IEEE754x32().dec_bin(numero))
         elif opcion == 12:
+            numero = float(palabra)
+            palabra = str(IEEE754x64().dec_bin(numero))
+        elif opcion == 13:
+            numero = float(palabra)
+            palabra = str(Fraccionario().dec_bin(numero,8))
+        elif opcion == 14:
             numero = int(palabra)
             palabra = str(Octal().dec_oct(numero))
-        elif opcion == 13:
+        elif opcion == 15:
             numero = int(palabra)
             palabra = str(Hexadecimal().dec_hex(numero))
-        elif opcion == 14:
+        elif opcion == 16:
             decimal = Octal().oct_dec(palabra)
             palabra = str(Binario().dec_bin(decimal))
-        elif opcion == 15:
+        elif opcion == 17:
             palabra = str(Octal().oct_dec(palabra))
-        elif opcion == 16:
+        elif opcion == 18:
             decimal = Hexadecimal().hex_dec(palabra)
             palabra = str(Binario().dec_bin(decimal))
-        elif opcion == 17:
+        elif opcion == 19:
             palabra = str(Hexadecimal().hex_dec(palabra))
         else:
             palabra = ''

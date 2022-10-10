@@ -13,7 +13,7 @@ class Test_Fraccionario(unittest.TestCase):
         self.assertEquals('00010010.0011', self.tmp.dec_bin(18.2,4))
 
     def test_bin_dec(self):
-        self.assertEquals(18.5, self.tmp.bin_dec('00010010.1000'))
+        self.assertEquals(18.5, self.tmp.bin_dec('00010010.1000',2))
 
 if __name__ == '__main__':
     unittest.main()
