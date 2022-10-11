@@ -103,6 +103,11 @@ QPlainTextEdit#text_res {
     </item>
     <item>
      <property name="text">
+      <string>Binario IEEE754 (64 bits) a Decimal</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
       <string>Binario Fraccionario a Decimal</string>
      </property>
     </item>
@@ -134,6 +139,11 @@ QPlainTextEdit#text_res {
     <item>
      <property name="text">
       <string>Decimal a Binario IEEE754 (32 bits) </string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Decimal a Binario IEEE754 (64 bits)</string>
      </property>
     </item>
     <item>
@@ -209,8 +219,32 @@ QPlainTextEdit#text_res {
     <property name="cursor" stdset="0">
      <cursorShape>IBeamCursor</cursorShape>
     </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAsNeeded</enum>
+    </property>
+    <property name="lineWrapMode">
+     <enum>QPlainTextEdit::NoWrap</enum>
+    </property>
+    <property name="readOnly">
+     <bool>false</bool>
+    </property>
     <property name="overwriteMode">
      <bool>false</bool>
+    </property>
+    <property name="tabStopWidth">
+     <number>80</number>
+    </property>
+    <property name="textInteractionFlags">
+     <set>Qt::TextEditorInteraction</set>
+    </property>
+    <property name="maximumBlockCount">
+     <number>0</number>
     </property>
     <property name="placeholderText">
      <string/>
@@ -298,6 +332,15 @@ QPlainTextEdit#text_res {
     </property>
     <property name="cursor" stdset="0">
      <cursorShape>IBeamCursor</cursorShape>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="midLineWidth">
+     <number>0</number>
+    </property>
+    <property name="lineWrapMode">
+     <enum>QPlainTextEdit::NoWrap</enum>
     </property>
     <property name="readOnly">
      <bool>true</bool>
